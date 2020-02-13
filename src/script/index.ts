@@ -1,6 +1,8 @@
 import { rand, loadImage } from "./util";
 import { Drawer } from "./Drawer";
 import { Viper, Position } from "./character";
+import viperPng from "../image/viper.png";
+import "../css/style.css";
 
 declare global {
   interface Window {
@@ -15,7 +17,6 @@ declare global {
 
 window.isKeyDown = {};
 
-const images = require("../image/*.*");
 const CANVAS_WIDTH = 640;
 const CANVAS_HEIGHT = 480;
 
@@ -32,7 +33,7 @@ window.addEventListener(
     draw = new Drawer(document.body.querySelector("#main_canvas"));
     canvas = draw.canvas;
     ctx = draw.context;
-    image = await loadImage(images.viper.png);
+    image = await loadImage(viperPng);
     initialize();
     eventSetting();
     startTime = Date.now();
